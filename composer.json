@@ -1,0 +1,19 @@
+{
+    "name": "mozillal10n/bugzilla",
+    "description": "Functions used to query Bugzilla in l10n tools",
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/flodolo/phpclass-cache"
+        }
+    ],
+    "require": {
+        "atoum/atoum" : "dev-master",
+        "mozillal10n/cache": "dev-master"
+    },
+    "autoload": {
+        "psr-0": {
+            "Bugzilla": "src/"
+        }
+    }
+}
