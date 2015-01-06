@@ -11,24 +11,25 @@ class Bugzilla extends atoum\test
     public function getBugzillaLocaleFieldDP()
     {
         return [
-            ['it', 'all', false, 'it / Italian'],
-            ['fr', '', false, 'fr / French'],
-            ['de', 'www', false, 'de / German'],
-            ['es-ES', 'desktop', false, 'es-ES / Spanish'],
-            ['es-ES', 'www', false, 'es-ES / Spanish (Spain)'],
-            ['ab-CD', '', false, 'ab-CD'],
+            ['it', 'all', false, TEST_FILES . 'desktop.json', 'it / Italian'],
+            ['fr', '', false, TEST_FILES . 'desktop.json', 'fr / French'],
+            ['de', 'www', false, TEST_FILES . 'www.json', 'de / German'],
+            ['es-ES', 'desktop', false, TEST_FILES . 'desktop.json', 'es-ES / Spanish'],
+            ['es-ES', 'www', false, TEST_FILES . 'www.json', 'es-ES / Spanish (Spain)'],
+            ['sr-Latn', 'www', false, TEST_FILES . 'www.json', 'sr / Serbian'],
+            ['ab-CD', '', false, TEST_FILES . 'desktop.json', 'ab-CD'],
         ];
     }
 
     /**
      * @dataProvider getBugzillaLocaleFieldDP
      */
-    public function testGetBugzillaLocaleField($a, $b, $c, $d)
+    public function testGetBugzillaLocaleField($a, $b, $c, $d, $e)
     {
         $obj = new _Bugzilla();
         $this
-            ->string($obj->getBugzillaLocaleField($a, $b, $c))
-                ->isEqualTo($d);
+            ->string($obj->getBugzillaLocaleField($a, $b, $c, $d))
+                ->isEqualTo($e);
     }
 
     public function testGetBugsFromCSV()

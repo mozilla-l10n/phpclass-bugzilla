@@ -8,8 +8,10 @@
         }
     ],
     "require": {
-        "atoum/atoum" : "dev-master",
         "mozillal10n/cache": "dev-master"
+    },
+    "require-dev": {
+        "atoum/atoum" : "dev-master"
     },
     "autoload": {
         "psr-0": {
