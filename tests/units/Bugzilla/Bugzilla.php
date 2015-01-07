@@ -35,8 +35,9 @@ class Bugzilla extends atoum\test
     public function testGetBugsFromCSV()
     {
         $obj = new _Bugzilla();
-        $csv_data_short = $obj->getBugsFromCSV(TEST_FILES . 'bugzilla.csv');
-        $csv_data_full = $obj->getBugsFromCSV(TEST_FILES . 'bugzilla.csv', true);
+        $csv_content = file(TEST_FILES . 'bugzilla.csv');
+        $csv_data_short = $obj->getBugsFromCSV($csv_content);
+        $csv_data_full = $obj->getBugsFromCSV($csv_content, true);
 
         // Check number of read bugs (2)
         $this
