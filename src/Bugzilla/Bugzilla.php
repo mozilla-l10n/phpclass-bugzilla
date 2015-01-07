@@ -1,6 +1,6 @@
 <?php
 namespace Bugzilla;
-use Cache\Cache as _Cache;
+use Cache\Cache;
 
 /**
  * Bugzilla class
@@ -72,10 +72,10 @@ class Bugzilla {
 
         // Check if I have a cached request for this element
         $cache_id = "bugzilla_{$component}";
-        if (! $json_data = _Cache::getKey($cache_id)) {
+        if (! $json_data = Cache::getKey($cache_id)) {
             // No cache. Read remote and cache answer
             $json_data = json_decode(file_get_contents($url_query), true);
-            _Cache::setKey($cache_id, $json_data);
+            Cache::setKey($cache_id, $json_data);
         }
 
         if (isset($json_data[$locale])) {
