@@ -56,7 +56,7 @@ class Bugzilla {
      *
      * @return  string                "Locale / Language name" for Bugzilla queries
      */
-    public static function getBugzillaLocaleField($locale, $component = 'www', $log_errors = true, $url_query = '') {
+    public static function getBugzillaLocaleField($locale, $component = 'www', $log_errors = false, $url_query = '') {
         if ($url_query == '') {
             $url_query = "https://l10n.mozilla-community.org/~flod/mozilla-l10n-query/?bugzilla={$component}";
         }
