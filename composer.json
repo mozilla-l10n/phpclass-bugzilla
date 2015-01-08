@@ -8,7 +8,7 @@
         }
     ],
     "require": {
-        "mozillal10n/cache": "dev-master"
+        "mozillal10n/cache": "0.*"
     },
     "require-dev": {
         "atoum/atoum" : "dev-master"
