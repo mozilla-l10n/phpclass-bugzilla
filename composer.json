@@ -4,7 +4,7 @@
     "repositories": [
         {
             "type": "vcs",
-            "url": "https://github.com/flodolo/phpclass-cache"
+            "url": "https://github.com/mozilla-l10n/phpclass-cache"
         }
     ],
     "require": {
