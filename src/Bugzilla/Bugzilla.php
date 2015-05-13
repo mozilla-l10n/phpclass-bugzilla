@@ -73,7 +73,6 @@ class Bugzilla
 
         // Some locales don't exist on Bugzilla, map them to another code
         $exceptions = [
-            'es'      => 'es-ES',
             'sr-Latn' => 'sr',
         ];
         if (isset($exceptions[$locale])) {
