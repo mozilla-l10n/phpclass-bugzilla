@@ -16,6 +16,7 @@ class Bugzilla
     /**
      * List of Bugzilla locales per component, used only when the global
      * cache is not available.
+     *
      * @var array list of locales [component_name => Json]
      */
     private static $bugzilla_fields_json = [];
@@ -68,7 +69,7 @@ class Bugzilla
     public static function getBugzillaLocaleField($locale, $component = 'www', $log_errors = false, $url_query = '')
     {
         if ($url_query == '') {
-            $url_query = "https://l10n.mozilla-community.org/~flod/mozilla-l10n-query/?bugzilla={$component}";
+            $url_query = "https://l10n.mozilla-community.org/mozilla-l10n-query/?bugzilla={$component}";
         }
 
         // Some locales don't exist on Bugzilla, map them to another code
