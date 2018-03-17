@@ -4,14 +4,15 @@
     "repositories": [
         {
             "type": "vcs",
-            "url": "https://github.com/mozilla-l10n/phpclass-cache"
+            "url": "https://github.com/mozilla-l10n/phpclass-cache",
+            "no-api": true
         }
     ],
     "require": {
         "mozillal10n/cache": "0.*"
     },
     "require-dev": {
-        "atoum/atoum" : "~2.0",
+        "atoum/atoum" : "~3.0",
         "friendsofphp/php-cs-fixer": "~2.1"
     },
     "autoload": {
