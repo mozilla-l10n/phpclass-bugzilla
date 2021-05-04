@@ -69,7 +69,7 @@ class Bugzilla
     public static function getBugzillaLocaleField($locale, $component = 'www', $log_errors = false, $url_query = '')
     {
         if ($url_query == '') {
-            $url_query = "https://l10n.mozilla-community.org/mozilla-l10n-query/?bugzilla={$component}";
+            $url_query = "https://flod.org/mozilla-l10n-query/?bugzilla={$component}";
         }
 
         // Some locales don't exist on Bugzilla, map them to another code
