@@ -1,7 +1,7 @@
 <?php
 namespace tests\units\Bugzilla;
 
-use atoum;
+use atoum\atoum;
 use Bugzilla\Bugzilla as _Bugzilla;
 
 require_once __DIR__ . '/../bootstrap.php';
