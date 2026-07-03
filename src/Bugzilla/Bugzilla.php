@@ -35,7 +35,10 @@ class Bugzilla
         $short_bugs = [];
         $single_bug = [];
 
-        $csv_content = array_map('str_getcsv', $csv);
+        $csv_content = array_map(
+            fn ($line) => str_getcsv($line, ',', '"', ''),
+            $csv
+        );
         foreach ($csv_content as $line) {
             if ($line[0] == 'bug_id') {
                 /* If it starts with bug_id, I'm reading the first line
@@ -69,7 +72,7 @@ class Bugzilla
     public static function getBugzillaLocaleField($locale, $component = 'www', $log_errors = false, $url_query = '')
     {
         if ($url_query == '') {
-            $url_query = "https://flod.org/mozilla-l10n-query/?bugzilla={$component}";
+            $url_query = "https://mozilla-l10n.github.io/mozilla-l10n-query/?bugzilla={$component}";
         }
 
         // Some locales don't exist on Bugzilla, map them to another code
