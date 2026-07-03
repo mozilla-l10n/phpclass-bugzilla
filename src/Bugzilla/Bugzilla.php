@@ -35,7 +35,10 @@ class Bugzilla
         $short_bugs = [];
         $single_bug = [];
 
-        $csv_content = array_map('str_getcsv', $csv);
+        $csv_content = array_map(
+            fn ($line) => str_getcsv($line, ',', '"', ''),
+            $csv
+        );
         foreach ($csv_content as $line) {
             if ($line[0] == 'bug_id') {
                 /* If it starts with bug_id, I'm reading the first line
